@@ -1,5 +1,4 @@
 const fs = require('fs')
-'use strict';
 var file = process.argv[2];
 
 if(!file){
