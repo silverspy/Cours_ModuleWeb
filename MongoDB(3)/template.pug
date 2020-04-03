@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+  head
+    title= City
+    style.
+      table, th, td { border: 3px solid black; border-collapse: collapse;}
+  body
+    h1 City
+      h2 Ajouter une ville :
+        form(action='/city/' method='POST')
+          input(type='text', name='name', id='"name"')
+          input(type='submit')
+      h2 Liste des ville :
+    table
+      thead
+        tr
+          th ID
+          th Ville
+          th Modifier
+          th Supprimer
+      tbody
+        each city in citiess
+          tr 
+            form(action="/city/" + city.id method='PUT')
+              td= city.id
+              td
+                input(type="text" name="name" value=city.name id=id)
+              td
+                input(type='submit' value='Modifier')
+            td
+              a(method='DELETE' href="/city/" + city.id) Supprimer
